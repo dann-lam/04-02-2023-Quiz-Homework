@@ -1,0 +1,22 @@
+* {}
+
+#top-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#game-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid black;
+    align-items: center;
+    padding: 10px;
+}
+
+#hidden-zone {
+    border: 1px solid black;
+}
