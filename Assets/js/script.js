@@ -42,26 +42,108 @@ There is also a "Go Back" Button on the highscore screen, which brings you to th
 There is also a "Clear Highscores" Button, which clears out our high scores.
 
 
-HTML should be formatted as follows:
-<div>
-View Highscores:
-Time:
-</div>
-<div>
-Title
-Question when game begins.
-</div>
-<div>
-Description of game.
-Unordered list when game begins.
-</div>
-
-
-
 Hidden Bar
 Hidden Status of Clicked
 
-
-
-
 */
+//Get elements by their IDs
+let gameArea = document.getElementById("game-area");
+let topBar = document.getElementById("top-bar");
+//Initialize objects for questions and scores.
+
+let answerObjDemo = {
+    questionText: "How fast does an unlaiden swallow move?",
+    "Answer1":true,
+    "Answer2":false,
+    "Answer3":false,
+    "Answer4":false,
+}
+
+// console.log(answerObjDemo.Answer1)
+
+let questionsArr = [answerObjDemo];
+
+//Debugging Element for inspection.
+let showMeElement = (ele) => {
+    console.log(ele);
+    console.log("showmeElement activated");
+
+}
+// showMeElement();
+
+
+
+//Clears the gameArea element of ANYTHING fed into it.
+let clearAreaByID = (ele) => {
+    console.log("I cleared it.");
+    console.log(ele);
+    ele.innerHTML = "";
+}
+
+
+let showTopBar = () => {
+    let
+}
+
+let showStartScreen = () => {
+        //Create Elements
+    let gameDiv = document.createElement("div");
+    let gameTitle = document.createElement("h1");
+    let gameInstructions = document.createElement("p")
+    let gameStartBtn = document.createElement("button");
+        //Set element's IDs
+    gameDiv.id = "start-game-screen";
+    gameTitle.id = "game-title";
+    gameInstructions.id = "game-instructions";
+    gameStartBtn.id = "start-game-button";
+        //Set their Text
+    gameTitle.innerText = "Coding Quiz Game";
+    gameInstructions.innerText = "Instructions go here.";
+    gameStartBtn.innerText = "Start Game!";
+        //Apend them back to the gameArea
+    gameDiv.appendChild(gameTitle);
+    gameDiv.appendChild(gameInstructions);
+    gameDiv.appendChild(gameStartBtn);
+        //Appends all to the gameArea
+    gameArea.appendChild(gameDiv);
+
+}
+
+
+let showHighScoreScreen = () => {
+
+}
+
+
+let startGame = () => {
+
+}
+
+let showScoreBoard = () => {
+
+}
+
+let statusChecker = () => {
+
+}
+
+let removeTime = () => {
+
+}
+
+let victory = () => {
+
+}
+
+let defeat = () => {
+
+}
+ let showHighestScore = () => {
+
+ }
+
+// --------------------------------------------
+//LISTENERS for any kind of button activation.
+
+
+showStartScreen();
