@@ -49,6 +49,7 @@ Hidden Status of Clicked
 //Get elements by their IDs
 let gameArea = document.getElementById("game-area");
 let topBar = document.getElementById("top-bar");
+let timerDisplay = document.getElementById("timer-display");
 //Initialize objects for questions and scores.
 
 let answerObjDemo = {
@@ -82,7 +83,19 @@ let clearAreaByID = (ele) => {
 
 
 let showTopBar = () => {
-    let
+    //Create the elements for our highscore
+    let highScoreDiv = document.createElement("div");
+    let timeLeftDiv = document.createElement("div");
+    //Put back our IDs for the newly created elements.
+    highScoreDiv.id = "high-score-button";
+    timeLeftDiv.id = "time-left-div";
+    //Fix the text for our created elements.
+    highScoreDiv.innerHTML = "View Highscore";
+    timeLeftDiv.innerHTML = `Time: <span id="timer-display">75</span>`;
+    //Append our newly created elements to the top-bar.
+    topBar.appendChild(highScoreDiv)
+    topBar.appendChild(timeLeftDiv)
+
 }
 
 let showStartScreen = () => {
@@ -106,6 +119,7 @@ let showStartScreen = () => {
     gameDiv.appendChild(gameStartBtn);
         //Appends all to the gameArea
     gameArea.appendChild(gameDiv);
+    showTopBar();
 
 }
 
