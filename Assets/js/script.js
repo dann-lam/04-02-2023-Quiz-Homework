@@ -46,10 +46,13 @@ Hidden Bar
 Hidden Status of Clicked
 
 */
+
 //Get elements by their IDs
 let gameArea = document.getElementById("game-area");
 let topBar = document.getElementById("top-bar");
-let timerDisplay = document.getElementById("timer-display");
+
+
+
 //Initialize objects for questions and scores.
 
 let answerObjDemo = {
@@ -125,6 +128,37 @@ let showStartScreen = () => {
 
 
 let showHighScoreScreen = () => {
+    console.log("Showing high score screen...")
+    //put me in the gameArea
+    let highscoresDiv = document.createElement("div");
+    let highscoresDisplay = document.createElement("ol");
+
+    //An object stores the name and score as an object in the local storage.
+    //Read the values from the object and put them into an array.
+
+    // let maxSpeed = {
+    //     car: 300,
+    //     bike: 60,
+    //     motorbike: 200,
+    //     airplane: 1000,
+    //     helicopter: 400,
+    //     rocket: 8 * 60 * 60
+    // };
+    // let sortable = [];
+    // for (var vehicle in maxSpeed) {
+    //     sortable.push([vehicle, maxSpeed[vehicle]]);
+    // }
+
+    // sortable.sort(function(a, b) {
+    //     return a[1] - b[1];
+    // });
+
+    // [["bike", 60], ["motorbike", 200], ["car", 300],
+    // ["helicopter", 400], ["airplane", 1000], ["rocket", 28800]]
+
+    //Iterate through that object, displaying both their name and score.
+    //create a list element for each object in the array.
+    //Append them to the highscoresDisplay
 
 }
 
@@ -133,7 +167,7 @@ let startGame = () => {
 
 }
 
-let showScoreBoard = () => {
+let showEndingScoreBoard = () => {
 
 }
 
@@ -152,12 +186,27 @@ let victory = () => {
 let defeat = () => {
 
 }
- let showHighestScore = () => {
 
- }
 
 // --------------------------------------------
 //LISTENERS for any kind of button activation.
 
 
+
+
+
 showStartScreen();
+//Get elements by their ID, except this time they're created from script.
+let highScoreBtn = document.getElementById("high-score-button");
+let startGameBtn = document.getElementById("start-game-button");
+
+highScoreBtn.addEventListener("click", function(){
+    console.log("High score loading...");
+    clearAreaByID(gameArea);
+    clearAreaByID(topBar);
+    showHighScoreScreen();
+})
+startGameBtn.addEventListener("click", function(){
+    console.log("Game starting...");
+
+})
