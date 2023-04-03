@@ -22,3 +22,10 @@
 #hidden-zone {
     border: 1px solid black;
 }
+
+#game-title {
+    font-size: large;
+    font-weight: bolder;
+}
+
+#game-button {}
