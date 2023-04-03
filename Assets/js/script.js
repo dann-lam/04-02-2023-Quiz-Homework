@@ -78,80 +78,14 @@ let showMeElement = (ele) => {
 
 
 //Clears the gameArea element of ANYTHING fed into it.
-let clearAreaByID = (ele) => {
-    console.log(`I cleared it. ${ele}`);
-    ele.innerHTML = "";
-}
 
 
-let showTopBar = () => {
-    //Create the elements for our highscore
-    let highScoreDiv = document.createElement("div");
-    let timeLeftDiv = document.createElement("div");
-    //Put back our IDs for the newly created elements.
-    highScoreDiv.id = "high-score-button";
-    timeLeftDiv.id = "time-left-div";
-    //Fix the text for our created elements.
-    highScoreDiv.innerHTML = "View Highscore";
-    timeLeftDiv.innerHTML = `Time: <span id="timer-display">75</span>`;
-    //Append our newly created elements to the top-bar.
-    topBar.appendChild(highScoreDiv)
-    topBar.appendChild(timeLeftDiv)
 
-}
 
-let showStartScreen = () => {
-        //Create Elements
-    let gameDiv = document.createElement("div");
-    let gameTitle = document.createElement("h1");
-    let gameInstructions = document.createElement("p")
-    let gameStartBtn = document.createElement("button");
-        //Set element's IDs
-    gameDiv.id = "start-game-screen";
-    gameTitle.id = "game-title";
-    gameInstructions.id = "game-instructions";
-    gameStartBtn.id = "start-game-button";
-        //Set their Text
-    gameTitle.innerText = "Coding Quiz Game";
-    gameInstructions.innerText = "Instructions go here.";
-    gameStartBtn.innerText = "Start Game!";
-        //Apend them back to the gameArea
-    gameDiv.appendChild(gameTitle);
-    gameDiv.appendChild(gameInstructions);
-    gameDiv.appendChild(gameStartBtn);
-        //Appends all to the gameArea
-    gameArea.appendChild(gameDiv);
-    showTopBar();
-
-}
 
 
 let showHighScoreScreen = () => {
-    console.log("Showing high score screen...")
-    //clears both areas.
-    clearAreaByID(gameArea);
-    clearAreaByID(topBar);
-    //put me in the gameArea
 
-    let highscoresDiv = document.createElement("div");
-    let highscoresDisplay = document.createElement("ol");
-    let goBackBtn = document.createElement("div");
-    let clearHighScores = document.createElement("div");
-
-    goBackBtn.id = "goBackBtn";
-    clearHighScores.id = "clearHighScoresBtn";
-    goBackBtn.innerHTML = "Go Back";
-    clearHighScores.innerHTML = "Clear Highscores";
-    highscoresDiv.id = "game-title";
-    highscoresDisplay.id = "game-instructions";
-    highscoresDiv.innerHTML = "Highscores:";
-
-
-
-    gameArea.appendChild(highscoresDiv);
-    gameArea.appendChild(highscoresDisplay);
-    gameArea.appendChild(goBackBtn);
-    gameArea.appendChild(clearHighScores);
     //An object stores the name and score as an object in the local storage.
     //Read the values from the object and put them into an array.
     //I took this code from: https://stackoverflow.com/questions/1069666/sorting-object-property-by-values
@@ -209,31 +143,3 @@ let defeat = () => {
 
 // --------------------------------------------
 //LISTENERS for any kind of button activation.
-
-
-
-
-
-showStartScreen();
-//Get elements by their ID, except this time they're created from script.
-let highScoreBtn = document.getElementById("high-score-button");
-let startGameBtn = document.getElementById("start-game-button");
-let goBackBtn = document.querySelector("#goBackBtn");
-let clearHighScoresBtn = document.getElementById("clearHighScoresBtn");
-
-highScoreBtn.addEventListener("click", function(event){
-    console.log("High score loading...");
-    event.stopPropagation();
-    showHighScoreScreen();
-    console.log(goBackBtn);
-})
-startGameBtn.addEventListener("click", function(event){
-    console.log("Game starting...");
-
-})
-console.log(goBackBtn);
-showHighScoreScreen.goBackBtn.addEventListener("click", function (event){
-    console.log("Going back...");
-    event.stopPropagation();
-    showStartScreen();
-})

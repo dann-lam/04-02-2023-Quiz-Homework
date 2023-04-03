@@ -12,45 +12,85 @@
 <body>
 
     <section id="everything">
-        <section id="top-bar">
-        </section>
+
+        <nav id="top-bar">
+            <div id="highscores">
+                Highscores
+            </div>
+            <div id="timer;">
+                Timer: <span id="count">75</span>
+            </div>
+        </nav>
 
         <section id="game-area">
+            <div id="start-screen">
+                <h1 id="game-title">Web Dev Quiz Game</h1>
+                <div id="instructions">
+                    Game instructions go here.
+                </div>
+                <button id="start-game-button">
+                    Start!
+                </button>
+            </div>
+
+            <div id="game-play-screen">
+                <h1 id="game-question">
+                    Question #1:
+                </h1>
+                <ol id="game-choices">
+                    <li>Test Demo</li>
+                    <li>Test Demo</li>
+                    <li>Test Demo</li>
+                    <li>Test Demo</li>
+                </ol>
+                <hr id="game-bar">
+                <p id="game-choice-result">
+                    Correct!
+                </p>
+            </div>
+
+
+            <div id="game-gameover-screen">
+                <h1 id="game">
+                    Game over!
+                </h1>
+                <p id="game-final-score">
+                    Your final score: <span id="time-left"></span>
+                </p>
+                <p id="game-enter-initials">
+
+                    <label>
+                        Initials:
+                    </label>
+                    <input id="input-initials">
+                    <button id="submit-button">
+                        Submit!
+                    </button>
+                </p>
+            </div>
+
+            <div id="highscores-screen">
+                <div>
+                    Highscores:
+                </div>
+                <ol id="scores-localstorage">
+                    <li>Score 1</li>
+                    <li>Score 2</li>
+                    <li>Score 3</li>
+                </ol>
+                <button id="goback">Go Back</button>
+                <button id="clearscores">Clear Scores</button>
+
+            </div>
+
         </section>
+        <div id="hidden-zone">
+
+        </div>
 
     </section>
     <script src="assets/js/script.js"></script>
 </body>
-<!-- <div id="hidden-zone">
 
-    <div id="game-play-screen">
-        <h1 id="game-question">
-
-        </h1>
-        <ol id="game-choices">
-
-        </ol>
-        <hr id="game-bar">
-        <p id="game-choice-result">
-
-        </p>
-    </div>
-</div>
-
-<div id="game-gameover-screen">
-    <h1 id="game">
-
-    </h1>
-    <p id="game-final-score">
-
-    </p>
-    <p id="game-enter-initials">
-
-        <label>
-
-        </label>
-        <input>
-    </p>
-</div> -->
 
 </html>
