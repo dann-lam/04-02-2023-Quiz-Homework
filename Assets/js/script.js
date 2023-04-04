@@ -64,41 +64,37 @@ let questionsArr = [answerObjDemo, answerObjDemo2];
 let showHighScoreScreen = () => {
     //Hides anything that may be there and displays the highscore screen.
     console.log("showHighScoresScreen activated");
-    console.log(localStorage)
-    console.log("^^^ Local Storage ^^^")
+
     hiddenZone.appendChild(gamePlayScreen);
     hiddenZone.appendChild(topBar);
     hiddenZone.appendChild(gameOverScreen);
     hiddenZone.appendChild(startScreen);
     gameArea.appendChild(highScoresScreen);
 
-
+    //Gets our keys and values from local storage and sorts them.
+    // ---------- //
     let sorted = [];
     // I got this from https://developer.mozilla.org/en-US/docs/Web/API/Storage/key
     for (let i = 0; i < localStorage.length; i++){
             //Grab the keys and values of our object.
         let localStoreKey = (localStorage.key(i));
             //Put read the second value of the array.
-        let localStoreVal = (localStorage.getItem(localStorage.key(i)));
+        let localStoreVal = (localStorage.getItem(localStoreKey));
             //Put each of them into an array.
         sorted.push([localStoreKey, localStoreVal])
     }
         //Sort them
-
-    //Display the array within the sorted array as the top scorer.
+        //Got this from https://www.w3schools.com/jsref/jsref_sort.asp
+    sorted.sort((a, b) => {
+       return b[1] - a[1]
+    });
+    // ----------- //
     //Create an LI for each, and then append them to the child.
-    //When we click on "Clear score button" it should change the inner html of the UL to be blank to reflect.
-
-    // sortable.sort(function(a, b) {
-    //     return a[1] - b[1];
-    // });
-
-    // [["bike", 60], ["motorbike", 200], ["car", 300],
-    // ["helicopter", 400], ["airplane", 1000], ["rocket", 28800]]
-
-    //Iterate through that object, displaying both their name and score.
-    //create a list element for each object in the array.
-    //Append them to the highscoresDisplay
+    for(let i = 0; i < sorted.length; i++){
+        let liEle = document.createElement("li");
+        liEle.innerText = `${sorted[i][0]} - ${sorted[i][1]}`
+        scoresLocalStorage.appendChild(liEle);
+    }
 }
 
 //Initializes the countdown here so it's available to all functions.
