@@ -1,7 +1,7 @@
 
 //Get elements by their IDs
 //GIVE ME ALL OF THEM >:D
-//P.S. I'm sorry.
+
 let gameArea = document.getElementById("game-area");
 let topBar = document.getElementById("top-bar");
 let startScreen = document.getElementById("start-screen");
@@ -14,7 +14,7 @@ let goBackBtn = document.getElementById("goback")
 let everything = document.getElementById("everything");
 let clearScore = document.getElementById("clearscores");
 let timer = document.getElementById("count");
-//Okay. MAYBE this was a bad idea.
+
 let startGame = document.getElementById("start-game-button");
 let gameQuestion = document.getElementById("game-question");
 let gameChoices = document.getElementById("game-choices");
@@ -35,7 +35,7 @@ var countDown;
 let initialize = () => {
     //Hides objects we want displayed and shows object of relevence.
     //This is a pretty foolish way of doing things but I want to try it.
-    //I regret this.
+
     hiddenZone.appendChild(gamePlayScreen);
     hiddenZone.appendChild(gameOverScreen);
     hiddenZone.appendChild(highScoresScreen);
@@ -92,7 +92,7 @@ let showHighScoreScreen = () => {
     clearInterval(countDown)
     countDown = 75;
     scoresLocalStorage.innerHTML = "";
-    //Resets the local storage so that it draws a fresh one each time.
+    //Resets the local storage display so that it draws a fresh one each time.
 
     console.log("showHighScoresScreen activated");
     //Hides anything that may be there and displays the highscore screen.
