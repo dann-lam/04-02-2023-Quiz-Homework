@@ -62,9 +62,12 @@ let questionsArr = [answerObjDemo, answerObjDemo2];
 
 //Logic for displaying scores and appending them.
 let showHighScoreScreen = () => {
-    //Hides anything that may be there and displays the highscore screen.
-    console.log("showHighScoresScreen activated");
 
+    scoresLocalStorage.innerHTML = "";
+    //Resets the local storage so that it draws a fresh one each time.
+
+    console.log("showHighScoresScreen activated");
+    //Hides anything that may be there and displays the highscore screen.
     hiddenZone.appendChild(gamePlayScreen);
     hiddenZone.appendChild(topBar);
     hiddenZone.appendChild(gameOverScreen);
@@ -91,6 +94,7 @@ let showHighScoreScreen = () => {
     // ----------- //
     //Create an LI for each, and then append them to the child.
     for(let i = 0; i < sorted.length; i++){
+        //As I go through this loop, I need to check if
         let liEle = document.createElement("li");
         liEle.innerText = `${sorted[i][0]} - ${sorted[i][1]}`
         scoresLocalStorage.appendChild(liEle);
@@ -143,7 +147,7 @@ let startGameFunc = () => {
     //Countdown that updates the countdown on our innerHTML.
     countDown = setInterval(()=>{
 
-        timer.innerHTML = count;
+        timer.innerHTML = count - 1;
         if(count > 1){
             count--
             console.log(count);
