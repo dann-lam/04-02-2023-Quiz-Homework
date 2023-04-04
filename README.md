@@ -39,7 +39,7 @@ You can also check the highscores page on the top left.
 
 
 
-![Image of Application](./assets/screenshots/screenshot.png)
+![Image of Application](https://raw.githubusercontent.com/dann-lam/04-02-2023-Quiz-Homework/main/Assets/screenshots/screenshot.png)
 
 
 
