@@ -154,6 +154,8 @@ let displayTheQuestions = (increment) => {
             if (typeof(value) == "boolean"){
                 let liEle = document.createElement("li")
                 liEle.innerHTML = key;
+                liEle.style.backgroundColor = "lightblue";
+                liEle.style.border = "1px solid black";
                 //I check the status of the dataset for each li element to see whether we click on the "correct" answer or not.
                 liEle.dataset.status = value;
 

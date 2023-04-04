@@ -28,4 +28,7 @@
     font-weight: bolder;
 }
 
-#game-button {}
+.button {
+    background-color: lightblue;
+    color: black;
+}
