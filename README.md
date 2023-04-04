@@ -39,7 +39,7 @@ You can also check the highscores page on the top left.
 
 
 ```md
-![release me D:<](assets/screenshot.png)
+![release me D:<](./assets/screenshots/screenshot.png)
 ```
 
 
