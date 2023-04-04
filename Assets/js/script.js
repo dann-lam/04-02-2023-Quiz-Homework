@@ -29,7 +29,8 @@ let gameResult = document.getElementById("game-choice-result");
 
 var count = 75;
 var increment = 0;
-
+//Initializes the countdown here so it's available to all functions.
+var countDown;
 
 let initialize = () => {
     //Hides objects we want displayed and shows object of relevence.
@@ -87,6 +88,9 @@ let questionsArr = [question5, question4, question3, question2, question1];
 //Logic for displaying scores and appending them.
 let showHighScoreScreen = () => {
 
+    //Stops the timer interval and resets the game if you go to highscores while a game is occurring.
+    clearInterval(countDown)
+    countDown = 75;
     scoresLocalStorage.innerHTML = "";
     //Resets the local storage so that it draws a fresh one each time.
 
@@ -125,9 +129,7 @@ let showHighScoreScreen = () => {
     }
 }
 
-//Initializes the countdown here so it's available to all functions.
 
-var countDown;
 
 
 //Function that handles displaying the questions from our array of question objects.
@@ -190,6 +192,9 @@ let startGameFunc = () => {
     gameArea.appendChild(gamePlayScreen);
     //initializes increment back to 0 as this is the start of the game and begins displaying questions
     increment = 0;
+    //reinitializes the game questions + choices if a game has just started.
+    gameQuestion.innerHTML = '';
+    gameChoices.innerHTML = '';
     displayTheQuestions(increment);
 }
 
