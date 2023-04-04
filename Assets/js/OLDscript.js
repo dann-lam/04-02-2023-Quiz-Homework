@@ -101,27 +101,7 @@ let showTopBar = () => {
 }
 
 let showStartScreen = () => {
-        //Create Elements
-    let gameDiv = document.createElement("div");
-    let gameTitle = document.createElement("h1");
-    let gameInstructions = document.createElement("p")
-    let gameStartBtn = document.createElement("button");
-        //Set element's IDs
-    gameDiv.id = "start-game-screen";
-    gameTitle.id = "game-title";
-    gameInstructions.id = "game-instructions";
-    gameStartBtn.id = "start-game-button";
-        //Set their Text
-    gameTitle.innerText = "Coding Quiz Game";
-    gameInstructions.innerText = "Instructions go here.";
-    gameStartBtn.innerText = "Start Game!";
-        //Apend them back to the gameArea
-    gameDiv.appendChild(gameTitle);
-    gameDiv.appendChild(gameInstructions);
-    gameDiv.appendChild(gameStartBtn);
-        //Appends all to the gameArea
-    gameArea.appendChild(gameDiv);
-    showTopBar();
+        //Create Element
 
 }
 

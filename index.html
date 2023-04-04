@@ -14,7 +14,7 @@
     <section id="everything">
 
         <nav id="top-bar">
-            <div id="highscores">
+            <div id="highscoresBtn">
                 Highscores
             </div>
             <div id="timer;">
@@ -23,6 +23,7 @@
         </nav>
 
         <section id="game-area">
+
             <div id="start-screen">
                 <h1 id="game-title">Web Dev Quiz Game</h1>
                 <div id="instructions">
@@ -35,13 +36,10 @@
 
             <div id="game-play-screen">
                 <h1 id="game-question">
-                    Question #1:
+
                 </h1>
                 <ol id="game-choices">
-                    <li>Test Demo</li>
-                    <li>Test Demo</li>
-                    <li>Test Demo</li>
-                    <li>Test Demo</li>
+
                 </ol>
                 <hr id="game-bar">
                 <p id="game-choice-result">
@@ -59,10 +57,10 @@
                 </p>
                 <p id="game-enter-initials">
 
-                    <label>
+                    <label for="initials">
                         Initials:
                     </label>
-                    <input id="input-initials">
+                    <input id="input-initials" type=text" name="initials" required minlength="2" maxlength="2">
                     <button id="submit-button">
                         Submit!
                     </button>
