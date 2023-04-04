@@ -11,10 +11,10 @@ let highScoresScreen = document.getElementById("highscores-screen");
 let hiddenZone = document.getElementById("hidden-zone");
 let highScoresBtn = document.getElementById("highscoresBtn");
 let goBackBtn = document.getElementById("goback")
-//Yes. I called it everything. Yes. I regret it. It's just the top level div.
 let everything = document.getElementById("everything");
 let clearScore = document.getElementById("clearscores");
 let timer = document.getElementById("count");
+//Okay. MAYBE this was a bad idea.
 let startGame = document.getElementById("start-game-button");
 let gameQuestion = document.getElementById("game-question");
 let gameChoices = document.getElementById("game-choices");
@@ -23,6 +23,8 @@ let timerArea = document.getElementById("timer");
 let submitScore = document.getElementById("submit-button");
 let inputInitials = document.getElementById("input-initials");
 let scoresLocalStorage = document.getElementById("scores-localstorage");
+let gameBar = document.getElementById("game-bar");
+let gameResult = document.getElementById("game-choice-result");
 // ----------------- GLOBAL VARIABLES //
 
 var count = 75;
@@ -32,6 +34,7 @@ var increment = 0;
 let initialize = () => {
     //Hides objects we want displayed and shows object of relevence.
     //This is a pretty foolish way of doing things but I want to try it.
+    //I regret this.
     hiddenZone.appendChild(gamePlayScreen);
     hiddenZone.appendChild(gameOverScreen);
     hiddenZone.appendChild(highScoresScreen);
@@ -159,7 +162,7 @@ let startGameFunc = () => {
             count = 75;
         }
     }, 1000)
-    //This is ugly. I know. I probably should've used data attributes for displaying or undisplaying things.
+
     //I'm essentially moving things in and out of the "hidden zone" each time to decide what to display LOL
     hiddenZone.appendChild(startScreen);
     hiddenZone.appendChild(gameOverScreen);
@@ -192,11 +195,23 @@ let statusChecker = (input) => {
         gameChoices.innerHTML = "";
         //Redraws the new set of questions.
         displayTheQuestions(increment)
+        gameResult.innerText = "Incorrect"
+        setTimeout(() => {
+            gameResult.innerText = "";
+        }, 1000)
     } else {
+        //Increment the increment.
         increment = increment + 1
+        //Resets the choices and questions.
         gameQuestion.innerHTML = "";
         gameChoices.innerHTML = "";
         displayTheQuestions(increment)
+        //Set the gameResult text
+        gameResult.innerText = "Correct"
+        setTimeout(() => {
+            //Resets our result text.
+            gameResult.innerText = "";
+        }, 1000)
     }
 }
 
