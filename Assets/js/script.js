@@ -45,23 +45,44 @@ let initialize = () => {
 
 
 //Initialize objects for questions and scores.
-let answerObjDemo = {
-    questionText: "How fast does an unlaiden swallow move?",
-    "Really fast?":true,
-    "Kinda fast?":false,
-    "Aaaaa3":false,
-    "OH god why":false,
+let question1 = {
+    questionText: "A very useful tool used during development and debugging for printing content to the debugger is:",
+    "Javascript":false,
+    "Terminal/bash":false,
+    "for loops":false,
+    "console.log":true,
 }
-let answerObjDemo2 = {
-    questionText: "How fast does an unlaiden swallow move?",
-    "Yes":true,
-    "Answer2":false,
-    "Answer3":false,
-    "Answer4":false,
+let question2 = {
+    questionText: "String values must be enclosed within ___ when being assigned to variables.",
+    "commas":true,
+    "curly brackets":false,
+    "quotes":false,
+    "parentheses":false,
+}
+let question3 = {
+    questionText: "Arrays in Javascript can be used to store ____.",
+    "numbers and strings":false,
+    "other arrays":false,
+    "booleans":false,
+    "all of the above":true,
+}
+let question4 = {
+    questionText: "The conditional if an if/else statement is enclosed within ____",
+    "quotes":false,
+    "curly brackets":true,
+    "parentheses":false,
+    "square brackets":false,
+}
+let question5 = {
+    questionText: "Commonly used data types DO NOT include:",
+    "strings":false,
+    "booleans":false,
+    "alerts":true,
+    "numbers":false,
 }
 
 
-let questionsArr = [answerObjDemo, answerObjDemo2];
+let questionsArr = [question5, question4, question3, question2, question1];
 
 //Logic for displaying scores and appending them.
 let showHighScoreScreen = () => {
@@ -187,7 +208,7 @@ let showEndingScoreBoard = () => {
 let statusChecker = (input) => {
     if(input == "false"){
         //Dings us on time if we got something wrong.
-        count = count - 10
+        count = count - 15
         //Moves to the next question in the array list.
         increment = increment + 1
         //Undraws our questions
